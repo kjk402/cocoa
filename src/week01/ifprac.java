@@ -82,7 +82,7 @@ public class ifprac {
 
 //5번 (2753 알람시계)
 
-
+/*
 public class ifprac {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -105,8 +105,30 @@ public class ifprac {
     }
 
 }
+*/
 
 
+// 6번 (11720 숫자의합)
+
+/*
+public class ifprac {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        String a = sc.next();
+        // 문자열로 받아서 한 글자씩 받기
+
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            sum += a.charAt(i) - '0';
+        }
+        System.out.print(sum);
+    }
+}
+
+*/
 
 
 
