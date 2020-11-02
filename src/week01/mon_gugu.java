@@ -2,7 +2,7 @@ package week01;
 
 import java.util.Scanner;
 
-public class mon {
+public class mon_gugu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("시작 단수:");
