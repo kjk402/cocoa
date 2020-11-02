@@ -61,7 +61,7 @@ public class ifprac {
 */
 
 //4번 (14681 사분면 고르기)
-/*
+
 public class ifprac {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -78,7 +78,7 @@ public class ifprac {
 
 }
 
- */
+
 
 //5번 (2753 알람시계)
 
