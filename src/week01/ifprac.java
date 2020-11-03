@@ -24,23 +24,22 @@ public class ifprac {
 */
 
 //2번 (9498 시험 성적)
-/*
-public class ifprac {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
+//public class ifprac {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n = sc.nextInt();
+//
+//        if( n<=100 && n>=90) System.out.println("A");
+//        else if (n>=80) System.out.println("B");
+//        else if (n>=70) System.out.println("C");
+//        else if (n>=60) System.out.println("D");
+//        else System.out.println("F");
+//    }
+//
+//}
 
-        if(n>=90) System.out.println("A");
-        else if (n>=80) System.out.println("B");
-        else if (n>=70) System.out.println("C");
-        else if (n>=60) System.out.println("D");
-        else System.out.println("F");
-    }
-
-}
-
- */
 
 
 //3번 (2753 윤년)
@@ -62,6 +61,7 @@ public class ifprac {
 
 //4번 (14681 사분면 고르기)
 
+/*
 public class ifprac {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -71,13 +71,13 @@ public class ifprac {
 
 
         if(n>1 && m>1) System.out.println(1);
-        else if (n>1 && m<1) System.out.println(4);
-        else if (n<1 && m>1) System.out.println(2);
-        else if (n<1 && m<1) System.out.println(3);
+        if (n>1 && m<1) System.out.println(4);
+        if (n<1 && m>1) System.out.println(2);
+        if (n<1 && m<1) System.out.println(3);
     }
 
 }
-
+*/
 
 
 //5번 (2753 알람시계)
@@ -110,7 +110,7 @@ public class ifprac {
 
 // 6번 (11720 숫자의합)
 
-/*
+
 public class ifprac {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -128,7 +128,7 @@ public class ifprac {
     }
 }
 
-*/
+
 
 
 
