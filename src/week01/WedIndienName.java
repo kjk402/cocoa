@@ -24,7 +24,7 @@ public class WedIndienName {
         String month = String.valueOf(arr[1]);
         String day = String.valueOf(arr[2]);
 
-        StringBuffer sb = new StringBuffer();
+        //StringBuffer sb = new StringBuffer();
         FileReader readFile;
         BufferedReader br;
         String getLine;
