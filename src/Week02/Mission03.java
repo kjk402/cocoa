@@ -53,16 +53,27 @@ public class Mission03 {
                     ret[0] = sc.nextLine();
                     System.out.print("비밀번호:");
                     ret[1] = sc.nextLine();
-                    sc.close();
+
 
                     String name = ret[0];
                     String password =ret[1];
-                    if(str.contains(name)){
-                        if(str.contains(name) || str.contains(password)){
+                    int idx = str.indexOf(":");
+                    if(str.substring(idx+1).equals(name)){
+                        if(str.substring(idx+1).equals(name) || str.substring(idx+1).equals(password)){
                             System.out.println("입력하신 정보가 맞습니다.");
-                            System.out.println("작업 번호를 선택해주세요.");
-                            System.out.println("1.데이터입력 2.데이터삭제 3.데이터수정 4.전체 보기 5.종료");
-                            AccountWrite accountWrite = new AccountWrite();
+
+
+                            while (true){
+                                System.out.println("작업 번호를 선택해주세요.");
+                                System.out.println("1.데이터입력 2.데이터삭제 3.데이터수정 4.전체 보기 5.종료");
+                                int menuNum = sc.nextInt();
+                                switch (menuNum) {
+                                    case 1:
+                                        AccountWrite.Write();
+                                    case 2:
+
+                                }
+                            }
 
                             }
                         }
