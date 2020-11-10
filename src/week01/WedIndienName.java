@@ -16,7 +16,7 @@ public class WedIndienName {
         return ret;
 
     }
-//"C:\\Users\\jk2018\\Desktop\\cocoa\\src\\week01\\IndienName.txt"
+
     public static void main(String[] args) {
 
         int[] arr = getBirth();
@@ -34,7 +34,7 @@ public class WedIndienName {
             String result = "";
 
             while((getLine = br.readLine()) != null){		// 한줄씩 읽기
-                //System.out.println(getLine);
+
                 int idx = getLine.indexOf(":");
                 if (Integer.parseInt(day) !=4 &&Integer.parseInt(day) !=5 && Integer.parseInt(day) !=6) {
                     if(getLine.startsWith(day+"일")){
@@ -53,9 +53,9 @@ public class WedIndienName {
             System.out.println("당신의 인디언식 이름은 "+ result + " 입니다.");
 
 
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e){ //파일 없을 때
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch (IOException e) { //입력 실패
             e.printStackTrace();
         }
 
