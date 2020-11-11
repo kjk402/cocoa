@@ -46,7 +46,7 @@ public class Mission03 {
 
                 }
 
-                while (br.readLine() != null) {
+                while ((str = br.readLine()) != null) {
                     String ret[] = new String[2];
                     Scanner sc = new Scanner(System.in);
                     System.out.print("이름:");
@@ -57,15 +57,17 @@ public class Mission03 {
 
                     String name = ret[0];
                     String password =ret[1];
+
                     int idx = str.indexOf(":");
-                    if(str.substring(idx+1).equals(name)){
-                        if(str.substring(idx+1).equals(name) || str.substring(idx+1).equals(password)){
+
+                    if(str.substring(idx+1).equals(password)){
+                        if(str.substring(idx+1).equals(name)||str.substring(idx+1).equals(password)){
                             System.out.println("입력하신 정보가 맞습니다.");
 
 
                             while (true){
                                 System.out.println("작업 번호를 선택해주세요.");
-                                System.out.println("1.데이터입력 2.데이터삭제 3.데이터수정 4.전체 보기 5.종료");
+                                System.out.println("1.데이터입력 2.데이터삭제 3.데이터수정 4.전체 보기 5.검색 6.종료");
                                 int menuNum = sc.nextInt();
                                 switch (menuNum) {
                                     case 1:
@@ -82,6 +84,9 @@ public class Mission03 {
                                         AccountShow.Show();
                                         break;
                                     case 5:
+                                        AccountSearch.Search();
+                                        break;
+                                    case 6:
                                         System.out.println("프로그램을 종료합니다.");
                                         return ;
                                 }

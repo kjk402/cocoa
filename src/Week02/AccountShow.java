@@ -10,13 +10,14 @@ public class AccountShow {
 
 
             String getLine;
+            System.out.println("================");
             try {
                 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
                 while((getLine = br.readLine())!=null) {
                     System.out.print(getLine+"\r\n");
 
                 }
-
+                System.out.println("================");
             } catch (IOException e) {
                 e.printStackTrace();
 
