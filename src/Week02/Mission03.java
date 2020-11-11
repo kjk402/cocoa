@@ -70,8 +70,20 @@ public class Mission03 {
                                 switch (menuNum) {
                                     case 1:
                                         AccountWrite.Write();
+                                        break;
                                     case 2:
-
+                                        AccountDelete.Delete();
+                                        System.out.println("삭제완료.");
+                                        break;
+                                    case 3:
+                                        AccountChange.Change();
+                                        break;
+                                    case 4:
+                                        AccountShow.Show();
+                                        break;
+                                    case 5:
+                                        System.out.println("프로그램을 종료합니다.");
+                                        return ;
                                 }
                             }
 
@@ -88,6 +100,8 @@ public class Mission03 {
         } catch (IOException e) { //입력 실패
             e.printStackTrace();
         } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (Exception e){
             e.printStackTrace();
         }
 

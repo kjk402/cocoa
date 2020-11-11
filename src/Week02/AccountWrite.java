@@ -46,11 +46,15 @@ public class AccountWrite {
                 String income = sc.nextLine();
                 System.out.print("지출:");
                 String spend = sc.nextLine();
+                System.out.print("지불방법:");
+                String payType = sc.nextLine();
 
-                fw.write(countLines("C:\\Users\\jk2018\\Desktop\\cocoa\\src\\Week02\\Account.txt")+"_"+"날짜:"+day +" 적요:"+ summary+" 수입:"+income+" 지출:" +spend+"\r\n");
+                fw.write(countLines("C:\\Users\\jk2018\\Desktop\\cocoa\\src\\Week02\\Account.txt")+"_"+"날짜:"+day +" 적요:"+ summary+" 수입:"+income+" 지출:" +spend+" 지불 방법:"+payType+"\r\n");
 
                 fw.close();
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
