@@ -17,7 +17,7 @@ public class AccountSearch {
                 Scanner sc = new Scanner(System.in);
                 System.out.print("분류(날짜, 적요, 수입, 지출, 지불방법):");
                 ret[0] = sc.nextLine();
-                System.out.print("내용:");
+                System.out.print("찾을 내용:");
                 ret[1] = sc.nextLine();
                 System.out.println("======================");
                 while((getLine = br.readLine())!=null) {
