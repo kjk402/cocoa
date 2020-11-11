@@ -43,7 +43,7 @@ public class AccountChange {
 
                 }
                 String del =br.readLine();
-                result += (num+"_"+"날짜"+day +" 적요:"+ summary+" 수입:"+income+" 지출:" +spend +" 지불 방법:"+payType+ "\r\n");
+                result += (num+"_"+"날짜"+day +" 적요:"+ summary+" 수입:"+income+" 지출:" +spend +" 지불방법:"+payType+ "\r\n");
 
                 //3. 삭제하고자 하는 position 이후부터 dummy에 저장
                 while((line = br.readLine())!=null) {
