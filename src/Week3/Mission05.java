@@ -54,16 +54,20 @@ public class Mission05 {
                     FileControl.ls();
                     break;
                 case "pwd":
-                    Pwd.pwd();
+                    Property.pwd();
+                    break;
+                case "java version":
+                    Property.javaVersion();
+                    break;
+                case "os":
+                    Property.osInfo();
                     break;
                 case "ipconfig":
-                    Network.ipconfig("ipconfig");
-                    break;
-                case "test":
-                    Test.getHostAddress();
+                    Network.getHostAddress();
                     break;
                 case "exit":
                     return;
+
 
                 default:
                     System.out.print(menu + "는 없는 명령어");
