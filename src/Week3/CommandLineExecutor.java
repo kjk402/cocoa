@@ -3,50 +3,21 @@ package Week3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
-import java.net.*;
 
-public class Network {
+public class CommandLineExecutor {
 
-    public static void ping(String add) {
-        try {
-            InetAddress pingcheck = InetAddress.getByName(add);
-            boolean reachable = pingcheck.isReachable(2000);
-
-            if(reachable) {
-                System.out.println("!!!!!!");
-            } else {
-                System.out.println("......");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void nsLookUp(String add) {
-        InetAddress inetaddr[] = null;
-        try {
-            inetaddr = InetAddress.getAllByName( add );
-        } catch( UnknownHostException e ) {
-            e.printStackTrace();
-        }
-        for( int i = 0; i < inetaddr.length; i++ ) {
-            System.out.println( inetaddr[i].getHostName() );
-            System.out.println( inetaddr[i].getHostAddress() );
-            System.out.println( "----------------------------------" );
-        }
-    }
-
-
-
-    public static void ipconfig(String arg) {
+    public static void main(String[] args) {
         // 실행
-        Network.execute("ping 8.8.8.8");
+        CommandLineExecutor.execute("ipconfig");
     }
 
+    /**
+     * cmd 명령어 실행
+     *
+     * @param cmd
+     */
     public static void execute(String cmd) {
         Process process = null;
         Runtime runtime = Runtime.getRuntime();
@@ -87,6 +58,8 @@ public class Network {
             while ((msg = errorBufferReader.readLine()) != null) {
                 errorOutput.append(msg + System.getProperty("line.separator"));
             }
+
+            // 프로세스의 수행이 끝날때까지 대기
             process.waitFor();
 
             // shell 실행이 정상 종료되었을 경우
@@ -98,6 +71,14 @@ public class Network {
                 System.out.println("비정상 종료");
                 System.out.println(successOutput.toString());
             }
+
+            // shell 실행시 에러가 발생
+//            if (CommonUtil.notEmpty(errorOutput.toString())) {
+//                // shell 실행이 비정상 종료되었을 경우
+//                System.out.println("오류");
+//                System.out.println(successOutput.toString());
+//            }
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -114,3 +95,5 @@ public class Network {
     }
 
 }
+
+
