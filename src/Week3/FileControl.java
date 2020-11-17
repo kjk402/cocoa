@@ -8,7 +8,6 @@ public class FileControl {
         File dir = new File("src\\Week3\\Files\\");
         File files[] = dir.listFiles();
 
-        String getLine;
 
 
         for (int i = 0; i < files.length; i++) {
@@ -55,7 +54,6 @@ public class FileControl {
             FileOutputStream fos = new FileOutputStream(copyFile); //복사할파일
 
             int fileByte = 0;
-            // fis.read()가 -1 이면 파일을 다 읽은것
             while((fileByte = fis.read()) != -1) {
                 fos.write(fileByte);
             }

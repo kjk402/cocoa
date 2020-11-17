@@ -1,9 +1,6 @@
 package Week3;
 
 
-
-import javax.swing.text.View;
-import java.io.File;
 import java.util.Scanner;
 
 public class Mission05 {
@@ -14,9 +11,9 @@ public class Mission05 {
             Scanner sc = new Scanner(System.in);
             String menu = sc.nextLine();
             if (menu.startsWith("cp")){
-                String[] coPy = menu.split(" ");
-                String ret2 = coPy[1];
-                String ret3 = coPy[2];
+                String[] str = menu.split(" ");
+                String ret2 = str[1];
+                String ret3 = str[2];
                 System.out.println(ret2);
                 System.out.println(ret3);
                 FileControl.cp("src\\Week3\\Files\\"+ret2, "src\\Week3\\Files\\"+ret3);
@@ -62,7 +59,7 @@ public class Mission05 {
                 case "os":
                     Property.osInfo();
                     break;
-                case "ipconfig":
+                case "ifconfig":
                     Network.getHostAddress();
                     break;
                 case "exit":
