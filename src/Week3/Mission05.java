@@ -62,8 +62,12 @@ public class Mission05 {
                 case "ifconfig":
                     Network.getHostAddress();
                     break;
+                case "hclock":
+                    KClock.koreanClock();
+                    break;
                 case "exit":
                     return;
+
 
 
                 default:
