@@ -10,18 +10,18 @@ public class KClock {
     public static final String ANSI_BLACK = "\u001B[30m";
 
     public static String white(String ret) {
-        String color = ANSI_WHITE + ret +ANSI_BLACK;
+        String color = ANSI_WHITE + ret+ANSI_RESET;
         return color;
     }
 
 
     public static String pupple(String ret) {
-        String color = ANSI_PURPLE + ret +ANSI_RESET;
+        String color = ANSI_PURPLE + ret+ANSI_RESET;
         return color;
     }
 
 
-    public static void koreanClock () {
+    public static void hClock () {
 
 
         String[][] hangulClock = {
@@ -110,7 +110,10 @@ public class KClock {
             }
 
             //분
-            hangulClock[5][5] = pupple(hangulClock[5][5]);
+            if (minute != 0){
+                hangulClock[5][5] = pupple(hangulClock[5][5]);
+            }
+
 
             int minuteFirst = minute / 10;
             int minuteSecond = minute % 10;
@@ -143,7 +146,6 @@ public class KClock {
         }
 
 
-        //화면 출력
         System.out.println("===========================");
         for (String[] i : hangulClock) {
             for (String j : i) {
@@ -151,6 +153,6 @@ public class KClock {
             }
             System.out.println();
         }
-        System.out.println("===========================");
+        System.out.print("===========================");
     }
 }
