@@ -1,13 +1,14 @@
 package Week3;
 
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class KClock {
 
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_WHITE = "\u001B[37m";
-    public static final String ANSI_BLACK = "\u001B[30m";
+
 
     public static String white(String ret) {
         String color = ANSI_WHITE + ret+ANSI_RESET;
@@ -16,7 +17,7 @@ public class KClock {
 
 
     public static String pupple(String ret) {
-        String color = ANSI_PURPLE + ret+ANSI_RESET;
+        String color = ANSI_PURPLE + ret+ ANSI_RESET;
         return color;
     }
 
@@ -33,14 +34,12 @@ public class KClock {
                 {"오", "육", "칠", "팔", "구", "분"}
         };
 
-
-        //날짜 가져오기
         Calendar cal = Calendar.getInstance();
-
+//        Scanner sc = new Scanner(System.in);
+//        int hour = sc.nextInt();
+//        int minute = sc.nextInt();
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
-        //시간 출력
-
 
 
 
@@ -55,10 +54,18 @@ public class KClock {
             hangulClock[4][0] = pupple(hangulClock[4][0]);
 
         }
-        else {
+        if (hour !=12 || hour !=0 && minute !=0){
+            //(hour !=12 || hour !=0 && minute !=0)
             //시
-            hangulClock[2][5] = pupple(hangulClock[2][5]);
+            if (hour != 0 &&minute !=0){
+                hangulClock[2][5] = pupple(hangulClock[2][5]);
+            }
 
+            if (hour ==0 && minute !=0){
+                hangulClock[2][5] = pupple(hangulClock[2][5]); //시
+                hangulClock[2][2] = pupple(hangulClock[2][2]);
+                hangulClock[2][4] = pupple(hangulClock[2][4]);
+            }
             if (hour > 12) hour -= 12;
 
             //시
