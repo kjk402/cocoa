@@ -63,7 +63,7 @@ public class Mission05 {
                     Network.getHostAddress();
                     break;
                 case "hclock":
-                    KClock.koreanClock();
+                    KClock.hClock();
                     break;
                 case "exit":
                     return;

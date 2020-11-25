@@ -1,5 +1,6 @@
 package Week3;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ public class KClock {
     }
 
 
-    public static void hClock () {
+    public static void hClock ()  {
 
 
         String[][] hangulClock = {
@@ -38,9 +39,10 @@ public class KClock {
 //        Scanner sc = new Scanner(System.in);
 //        int hour = sc.nextInt();
 //        int minute = sc.nextInt();
+
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
-
+//
 
 
         //정오

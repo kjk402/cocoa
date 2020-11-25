@@ -33,3 +33,7 @@ public static void javaVersion() {
 자바 버전 확인 가능. 
 https://unabated.tistory.com/entry/Java%EC%97%90%EC%84%9C-SystemgetProperty
 참고
+
+쓰레드
+Thread.sleep(1000);
+1초 쉬기

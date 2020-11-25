@@ -5,7 +5,7 @@ package Week3;
 public class Property {
     public static void pwd(){
         String rootPath = System.getProperty("user.dir");;
-        System.out.println(rootPath);
+        System.out.print(rootPath);
     }
 
     public static void javaVersion() {
@@ -19,6 +19,6 @@ public class Property {
         String version = System.getProperty("os.arch");
 
         System.out.println(name);
-        System.out.println(version);
+        System.out.print(version);
     }
 }
