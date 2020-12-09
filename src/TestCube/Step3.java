@@ -1,9 +1,6 @@
 package TestCube;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Step3 {
     private static String[][] left(Integer num, String[][] arr) {
@@ -70,6 +67,60 @@ public class Step3 {
         arr[2][num1] = temp4;
         return arr;
     }
+    public static String[][] leftswift(Integer num1, Integer num2, String[][] arr) {
+        String temp1 = arr[3][num2];
+        String temp2 = arr[4][num2];
+        String temp3 = arr[5][num2];
+        String temp4 = arr[num1][5];
+        String temp5 = arr[num1][4];
+        String temp6 = arr[num1][3];
+        String temp7 = arr[3][num1];
+        String temp8 = arr[4][num1];
+        String temp9 = arr[5][num1];
+        String temp10 = arr[num2][5];
+        String temp11 = arr[num2][4];
+        String temp12 = arr[num2][3];
+        arr[num1][3] = temp1;
+        arr[num1][4] = temp2;
+        arr[num1][5] = temp3;
+        arr[3][num1] = temp4;
+        arr[4][num1] = temp5;
+        arr[5][num1] = temp6;
+        arr[num2][3] = temp7;
+        arr[num2][4] = temp8;
+        arr[num2][5] = temp9;
+        arr[3][num2] = temp10;
+        arr[4][num2] = temp11;
+        arr[5][num2] = temp12;
+        return arr;
+    }
+    public static String[][] rightswift(Integer num1, Integer num2, String[][] arr) {
+        String temp1 = arr[3][num2];
+        String temp2 = arr[4][num2];
+        String temp3 = arr[5][num2];
+        String temp4 = arr[num1][5];
+        String temp5 = arr[num1][4];
+        String temp6 = arr[num1][3];
+        String temp7 = arr[3][num1];
+        String temp8 = arr[4][num1];
+        String temp9 = arr[5][num1];
+        String temp10 = arr[num2][5];
+        String temp11 = arr[num2][4];
+        String temp12 = arr[num2][3];
+        arr[num1][3] = temp9;
+        arr[num1][4] = temp8;
+        arr[num1][5] = temp7;
+        arr[3][num1] = temp12;
+        arr[4][num1] = temp11;
+        arr[5][num1] = temp10;
+        arr[num2][3] = temp3;
+        arr[num2][4] = temp2;
+        arr[num2][5] = temp1;
+        arr[3][num2] = temp6;
+        arr[4][num2] = temp5;
+        arr[5][num2] = temp4;
+        return arr;
+    }
     public static String[][] rightRotate(Integer num1, Integer num2,String[][] arr) {
         String[][] B = new String[3][3];
         for(int i=0; i<3; i++){
@@ -130,30 +181,54 @@ public class Step3 {
         }
         System.out.println();
     }
+    public static String random() {
+        String[] arr={"F", "F'", "R", "R'", "U", "U'", "B", "B'", "L", "L'", "D", "D'"};
+        Random r=new Random();
+        int randomValue = (int) (Math.random() * 10 +3);
+        String randomCommand = "";
+        for (int i=0; i<randomValue; i++){
+            randomCommand = randomCommand + arr[r.nextInt(arr.length)];
+        }
+        return randomCommand;
+    }
     public static void main(String[] args) {
         String[][] cube = {
                 {" "," "," ", "B", "B", "B1"},
                 {" "," "," ","B", "B", "B2"},
                 {" "," "," ","B", "B", "B3"},
-                {"W1", "W", "W", "O", "O", "O1", "G1", "G", "G", "Y1", "Y", "Y"},
+                {"W1", "W2", "W3", "O", "O", "O1", "G1", "G", "G", "Y1", "Y", "Y"},
                 {"W", "W", "W", "O", "O", "O", "G", "G", "G", "Y2", "Y", "Y"},
                 {"W", "W", "W", "O", "O", "O", "G", "G", "G", "Y3", "Y", "Y"},
                 {" "," "," ",   "R", "R", "R1"},
                 {" "," "," ","R", "R", "R"},
                 {" "," "," ","R", "R", "R"}
         };
+
         printing(cube);
         System.out.println();
         int finalcount = 0;
+
+        long beforeTime = System.currentTimeMillis();
+
         while (true) {
             Scanner sc = new Scanner(System.in);
             System.out.print("CUBE> ");
             String command = sc.nextLine();
 
             if (command.equals("Q")) {
+                long afterTime = System.currentTimeMillis();
+                long min = (afterTime - beforeTime)/60000;
+                long sec = (afterTime - beforeTime)/1000;
+                if (sec>59) {
+                    sec = sec%60;
+                }
+                System.out.println("경과시간: "+min +":"+sec);
                 System.out.println("조작 갯수: "+finalcount);
                 System.out.println("이용해주셔서 감사합니다. 뚜뚜뚜.");
                 return;
+            }
+            if (command.equals("random")) {
+                command = random();
             }
             String[] shell = command.split("");
             shell = change(shell);
@@ -178,18 +253,33 @@ public class Step3 {
                     up(5,9,cube);
                     rightRotate(6,3,cube);
                 }
+                if (shell[k].equals("R'")) {
+                    down(5,9,cube);
+                    leftRotate(3,6,cube);
+                }
                 if (shell[k].equals("L'")) {
                     up(3,11,cube);
                     leftRotate(3,0,cube);
                 }
-                if (shell[k].equals("R'")) {
-                    down(5,9,cube);
-                    leftRotate(3,6,cube);
-
-                }
                 if (shell[k].equals("L")) {
                     down(3,11,cube);
                     rightRotate(0,3,cube);
+                }
+                if (shell[k].equals("F'")) {
+                    leftswift(2,6,cube);
+                    leftRotate(3,3,cube);
+                }
+                if (shell[k].equals("F")) {
+                    rightswift(2,6,cube);
+                    rightRotate(3,3,cube);
+                }
+                if (shell[k].equals("B")) {
+                    leftswift(0,8,cube);
+                    rightRotate(9,3,cube);
+                }
+                if (shell[k].equals("B'")) {
+                    rightswift(0,8,cube);
+                    leftRotate(3,9,cube);
                 }
 
                 System.out.println(shell[k]);
