@@ -53,7 +53,7 @@ class MyImage extends Frame {
 
             System.out.println("next set of Pixels " + xPixel);
             Random rand = new Random();
-            int r = rand.nextInt(20) ;
+            int r = rand.nextInt(30) ;
             int a = rand.nextInt(30) ;
 
             if (k>0 && k<2) {

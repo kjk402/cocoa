@@ -186,10 +186,6 @@ public class Step3 {
                     System.out.println("모든 면을 맞추셨습니다. 축하드립니다.!!");
                     return;
                 }
-
-
-
-
             }
         }
     }

@@ -24,23 +24,22 @@ public class AccountDelete {
                 int num = sc.nextInt();
 
                 String line;
-
+                //num 전까지 읽기
                 for(int i=0; i<num-1; i++) {
-
-                    line = br.readLine(); //읽으며 이동
-
+                    line = br.readLine();
                     result += (line + "\r\n" );
 
                 }
+                //데이터 삭제
                 String del =br.readLine();
                 result += (num+"_"+"삭제된데이터" + "\r\n");
 
-                //3. 삭제하고자 하는 position 이후부터 dummy에 저장
+                //삭제 이후 끝까지 읽기
                 while((line = br.readLine())!=null) {
                     result += (line + "\r\n" );
 
                 }
-                //4. FileWriter를 이용해서 덮어쓰기
+
 
                 FileWriter fw = new FileWriter(file);
                 fw.write(result);

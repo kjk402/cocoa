@@ -9,4 +9,9 @@ JButton에 이미지 삽입하기
 ImageIcon 이용
     bat = new JButton(new ImageIcon("src\\Week4\\batsym.gif"));
 
-offscreen 그림그려주는 메소드, 픽셀단위
+Graphics 그림그려주는 클래스, 픽셀단위 
+(Graphics g)로 메소드를 재정의 하면된다.
+버튼은 이미지 삽입이라 이미지를 넣어도 x,y 로 위치 조정
+그래픽은 이미지자체를 삽입한 것이라 픽셀단위로 위치 조정해줘야한다.
+
+
